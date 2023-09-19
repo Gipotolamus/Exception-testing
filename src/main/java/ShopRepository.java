@@ -34,7 +34,6 @@ public class ShopRepository {
         }
         products = tmp;
     }
-
 //    public void add(int id) {
 //        Product addedProduct = findById(id);
 //        if (addedProduct != null) {
