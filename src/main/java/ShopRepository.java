@@ -34,7 +34,8 @@ public class ShopRepository {
         }
         products = tmp;
     }
-//    public void add(int id) {
+
+    //    public void add(int id) {
 //        Product addedProduct = findById(id);
 //        if (addedProduct != null) {
 //            throw new AlreadyExistsException(id);
@@ -50,15 +51,14 @@ public class ShopRepository {
 //        tmp[tmp.length] = addedProduct;
 //        products = tmp;
 //    }
-public Product[] added(Product product) throws AlreadyExistsException {
-    Product prod = findById(product.id);
-    if (product == prod) {
-        throw new AlreadyExistsException("Element with id: " + prod.id + " existing");
+    public Product[] added(Product product) throws AlreadyExistsException {
+        Product prod = findById(product.id);
+        if (product == prod) {
+            throw new AlreadyExistsException("Element with id: " + prod.id + " existing");
+        }
+        products = addToArray(products, product);
+        return products;
     }
-    products = addToArray(products, product);
-    return products;
-}
-
 
 
     public Product findById(int id) {
